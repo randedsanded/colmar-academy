@@ -5,11 +5,11 @@
 *{
     margin: 0;
     padding: 0;
-    /* outline: 1px dashed #000;   */
+    /* outline: 1px dashed #bbb; */
 }
 
 html{
-    font-size: 16px;        /* 1 rem used on the page == 16px  */
+    font-size: 16px;        /* 1 rem used on the page = 16px */
     box-sizing: border-box;
 }
 
@@ -20,7 +20,7 @@ body{
 
 a{
     text-decoration: none;
-    color:inherit;   /* Inherits from body text color, if body has no color, defaults to black */
+    color: inherit;
 }
 
 .container{
@@ -37,19 +37,20 @@ a{
 /* Set up the navbar for the desktop */
 nav{
     display: flex;
-    grid-column: full-start / full-end;  /* nav takes 100% of screen estate */
+    grid-column: full-start / full-end; /* nav takes up 100% of the screen estate */
     justify-content: space-between;
+    background-color: #fff;
     height: 4rem;
 }
 
 nav ul{
-    display:flex;
+    display: flex;
     list-style: none;
 }
 
-nav li{
-        align-content: center;
-        padding-right: 1rem;
+nav ul li{
+    align-content: center;
+    padding-right: 1rem;
 }
 
 nav ul li:last-child{
@@ -57,8 +58,7 @@ nav ul li:last-child{
 }
 
 /* TODO */
-/* To complete the navbar hyperlinks' styles */
-
+/* To complete the logo's hyperlinks' styles */
 nav ul li a{
     font-size: 0.75rem;
 }
@@ -81,7 +81,7 @@ nav a{
 
 .logoname-bold{
     font-weight: bold;
-    color: #484848
+    color: #484848;
 }
 
 .logoname-light{
@@ -101,16 +101,7 @@ header{
 }
 
 .imgcontainer{
-    padding:2rem 1.5rem;
-}
-
-header div{
-    display: block;
-    flex-direction: column;
-    justify-content: space-evenly;
-    height:18rem;
-    align-content: center;
-    padding-right: 2rem;
+    padding: 2rem 1.5rem;
 }
 
 header > img{
@@ -118,15 +109,25 @@ header > img{
     height: auto;
 }
 
-header dif >h1{
+header > div{
+    display: block;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 18rem;
+    align-content: center;
+    padding-right: 2rem;
+}
+
+header div > h1{
     font-size: xx-large;
 }
 
-header div >h2{
+header div > h2{
     font-size: large;
+    padding: 1.5rem 0;
 }
 
-header div >a {
+header div > a{
     display: block;
     background-color: #484848;
     color: #fff;
@@ -145,33 +146,33 @@ header div >a {
     justify-content: flex-start;
 }
 
-.practice>.imgcontainer > img {
+.practice > .imgcontainer > img{
     max-width: 100%;
     height: auto;
 }
 
-.practice>.practice-text{
+.practice > .practice-text{
     padding: 0 1.5rem;
 }
 
-.practice > .practice-text >h1{
+.practice > .practice-text > h1{
     font-size: xx-large;
     margin-bottom: 1.5rem;
 }
 
-.practice>.practice-text >p{
+.practice > .practice-text > p{
     font-size: small;
     font-weight: lighter;
 }
 
-.practice>.practice-text> p >span{
+.practice > .practice-text > p > span{
     display: block;
     padding: 2rem 0;
     font-weight: bold;
 }
 
 /* Set up events section */
-.events {
+.events{
     display: grid;
     grid-template-rows: repeat(3, min-content);
     border-left: 1px solid #e7e7e7;
@@ -185,21 +186,31 @@ header div >a {
     display: grid;
     grid-template-columns: 0.35fr 0.65fr;
     align-items: center;
-    border:1px solid #e7e7e7;
-    padding:1rem;
+    border: 1px solid #e7e7e7;
+    padding: 1rem;
 }
 
-.events ,.events-text{
+.events img{
+    width: 100%;
+    height: auto;
+}
+
+.events .events-img-mobile{
+    display: none;
+}
+
+.events .events-text{
     margin-left: 1rem;
     height: 100%;
     align-content: center;
 }
 
 .events .events-text h3{
-    font-size: medium;
+    font-size:medium;
 }
 
 .events .events-text p{
+    margin: 0.5rem 0;
     font-size: smaller;
 }
 
@@ -212,28 +223,123 @@ header div >a {
 footer{
     font-size: 0.8rem;
     display: flex;
-    grid-template-columns: full-start / full-end;
+    grid-column: full-start / full-end;
     justify-content: space-between;
     border-top: 1px solid #e7e7e7;
     padding: 1rem 1.5rem 2rem;
 }
 
 footer > ul{
-    list-style: none;
     display: flex;
-
+    list-style: none;
 }
 
-footer > ul li {
-    margin-right: 8rem;
-
+footer > ul > li{
+    margin-right: 0.5rem;
 }
 
-footer > ul > li > a {
-    color:#3434c6;
+footer > ul > li > a{
+    color: #3434c6;
 }
 
 /* Hide events mobile */
+#nav-mobile{
+    display: none;
+}
+
+.learning{
+    grid-column: full-start / full-end;
+    background-color: #f2f2f2;
+}
+
+.learning h2{
+    font-size: xx-large;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.grid-box{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0rem 4.5rem 2rem;
+    gap: 2rem;
+}
+
+.course-card img{
+    width: 100%;
+    height:auto;
+    
+}
+
+.course-card{
+    background-color: white;
+}
+
+.course-text{
+    padding: 1rem;
+}
+
+.course-text h3{
+    font-size: medium;
+}
+
+.course-item{
+    text-transform: uppercase;
+    font-size: small;
+    color: gray;
+    margin: 0.5rem 0;
+}
+
+.course-descriptor{
+    font-size: small;
+    color: gray;
+}
+
+
+.thesis {
+    grid-column: full-start / full-end;
+}
+
+.thesis h2 {
+    text-align: center;
+    padding: 2rem 0;
+    font-size: xx-large;
+}
+
+.thesis-categories {
+    display: grid;
+    grid-template-columns: 0.6fr 0.4fr;
+    padding: 0 1.5rem;
+    gap: 1.5rem;
+}
+
+.thesis-item img {
+    width: 100%;
+    height: auto;
+}
+
+.thesis-item{
+    display: grid;
+    grid-template-columns: 0.35fr 0.65fr;
+    padding: 1rem;
+    align-items: center;
+}
+
+.thesis-text{
+    margin-left: 1rem;
+}
+
+.category-large video {
+    width: 100%;
+}
+
+.thesis-item:first-child{
+    background-color: #d8d8d8;
+}
+
+
+
+
 
 
 /** ********************** **/
@@ -245,11 +351,151 @@ footer > ul > li > a {
 /** Start of Mobile Section **/
 /** *********************** **/
 
+/* if the width of screen is 375px and and below (aka 23rem) */
+@media screen and (max-width: 23.4375rem) {
+    /* Update footer section */
+    footer > ul{
+        display: none;
+    }
+
+    footer > p{
+        white-space: nowrap;
+        font-size: small;
+    }
+}
+
 /* if the width of screen is 640px and below (aka 40rem x 16px) */
 @media screen and (max-width: 40rem ) {
     
+    /* Hide desktop <nav> and hide the .practice section */
+    nav, .practice{
+        display: none;
+    }
 
+    /* Display nav-mobile */
+    #nav-mobile{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        grid-column: full-start / full-end;
+        height: 4rem;
+    }
+
+    header{
+        display: grid;
+        grid-column: full-start / full-end;
+    }
+
+    /* Update hero banner call-to-action */
+
+    .imgcontainer{
+        padding: 0;
+    }
+
+    header > div{
+        display: block;
+        width: auto;
+        height: auto;
+        padding: 2rem 1rem;
+    }
+
+    header div > h1{
+        padding-bottom: 2rem;           
+    }
+
+    header div > h2{
+        padding-bottom: 1.5rem;         
+    }
+
+    header div > a{
+        margin-bottom: 2rem;
+    }
+
+    /* Update events section */
+    .events{
+        display: grid;
+        grid-column: full-start / full-end;
+        border-left: none;
+    }
+
+    .events > .events-block{
+        display: flex;
+        flex-direction: column;
+        padding: 4rem 1rem 0 1rem;
+        border: none;
+    }
+
+    .events img{
+        display: none;
+    }
+
+    .events .events-img-mobile{
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+
+    .events > .events-block{
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 1rem 0 1rem;
+        border: none;
+    }
+
+    .events .events-block:first-child{
+        padding-top: 1rem;
+    }
+
+    .events .events-block:last-child{
+        padding-bottom: 2rem;
+    }
+
+
+    .events .events-text{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 5rem;
+        margin-left: 1rem;
+        justify-content: space-evenly;
+    }
+
+    .events .events-text > h3{
+        padding-top: 1rem;
+    }
+
+    .grid-box{
+        grid-template-columns: 1fr;
+        padding:0 1rem 2rem;
+        gap: 0.5rem;
+    }
+
+    .course-card{
+        background-color: #d8d8d8;
+    }
+
+    .course-card img, .course-item, .course-descriptor{
+        display: none;
+    }
+
+    .category-small{
+    display: none;
+    }
+
+    .category-large h3 {
+        display: none;
+    }
+
+    .category-large p{
+        display: none;
+    }
+
+    .thesis-categories{
+        grid-template-columns: 1fr;
+    }
+    
 }
+    
 
 /* *********************** */
-/** End of Mobile Section **/
+/** End of Mobile Section * */
